@@ -1,3 +1,4 @@
+// class for managing localstorage operations.
 class Storage {
     static getLocalStorage() {
         return JSON.parse(localStorage.getItem('todoList'));
@@ -8,6 +9,8 @@ class Storage {
     }
 }
 
+
+// class for creating a task
 class Task {
     constructor(description) {
       this.description = description;
@@ -25,6 +28,8 @@ if (Storage.getLocalStorage() === null) {
   taskList = Storage.getLocalStorage();
 }
 
+
+//class for performing operations in task management system
 class Features {
   static addTaskList = (task) => {
     if (task) {
