@@ -1,5 +1,22 @@
-import Task from './task.js';
-import Storage from './localstorage.js';
+class Storage {
+    static getLocalStorage() {
+        return JSON.parse(localStorage.getItem('todoList'));
+    }
+
+    static saveLocalStorage(todoList) {
+        localStorage.setItem('todoList', JSON.stringify(todoList));
+    }
+}
+
+class Task {
+    constructor(description) {
+      this.description = description;
+      this.completed = false;
+      this.index += 1;
+    }
+  }
+
+
 
 let taskList;
 
@@ -9,7 +26,7 @@ if (Storage.getLocalStorage() === null) {
   taskList = Storage.getLocalStorage();
 }
 
-export default class Features {
+class Features {
   static addTaskList = (task) => {
     if (task) {
       const newTask = new Task(task);
@@ -61,3 +78,5 @@ export default class Features {
     Storage.saveLocalStorage(taskList);
   }
 }
+
+module.exports = Features;
