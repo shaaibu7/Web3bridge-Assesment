@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-todo {
+    display: block;
+}
+
+#add-task {
+    outline: 0;
+    border-width:  0 0 2px;
+    width: 100%;
+}
